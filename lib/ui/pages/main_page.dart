@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel/shared/theme.dart';
+import 'package:travel/ui/pages/home_page.dart';
 import 'package:travel/ui/widgets/custom_bottom_navigation_item.dart';
 
 class MainPage extends StatelessWidget {
@@ -7,6 +8,10 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget buildContent() {
+      return const HomePage();
+    }
 
     Widget customButtonNavigation() {
       return Align(
@@ -36,9 +41,7 @@ class MainPage extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: [
-          const Text(
-            'Main Page',
-          ),
+          buildContent(),
           customButtonNavigation(),
         ],
       ),
